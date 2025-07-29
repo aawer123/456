@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:padding="0dp">
+
+    <!-- 主播放頁封面 -->
+    <FrameLayout
+        android:id="@+id/flCoverContainer"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/ivAlbumArt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:visibility="gone"/>
+
+        <ProgressBar
+            android:id="@+id/pbCoverLoading"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+    <!-- 歌曲標題 -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_alignParentTop="true"
+        android:scrollHorizontally="true"
+        android:layout_marginTop="250dp"
+        android:textAlignment="center"
+        android:ellipsize="none"
+        android:maxLines="1"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <!-- 歌曲時長 -->
+    <TextView
+        android:id="@+id/tvDuration"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp" />
+
+    <!-- Mini Player 區塊：新增 miniIv 顯示縮小封面 -->
+    <LinearLayout
+        android:id="@+id/miniPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal|center_vertical"
+        android:background="#E1D4F1"
+        android:padding="2dp">
+
+        <!-- 新增：Mini Player 的專輯縮圖 -->
+        <ImageView
+            android:id="@+id/miniIv"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:layout_marginEnd="8dp"
+            android:src="@android:drawable/ic_menu_report_image" />
+
+        <!-- Mini Player 標題 -->
+        <TextView
+            android:id="@+id/miniTitle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:scrollHorizontally="true"
+            android:ellipsize="none"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+        <!-- 上一首 按鈕 -->
+        <ImageButton
+            android:id="@+id/btnPrev"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:padding="0dp"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_media_previous"
+            android:contentDescription="上一首"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <!-- Mini Player 播放/暫停按鈕 -->
+        <ImageButton
+            android:id="@+id/miniBtnPlayPause"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="10dp"
+            android:padding="0dp"
+            android:scaleType="centerCrop"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@android:color/white" />
+        <!-- 下一首 按鈕 -->
+        <ImageButton
+            android:id="@+id/btnNext"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:padding="0dp"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_media_next"
+            android:contentDescription="下一首"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+</RelativeLayout>
